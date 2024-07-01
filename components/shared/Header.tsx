@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import NavItems from "./NavItems";
+import { Button } from "@/components/ui/button";
 
 const Header = () => {
   return (
@@ -19,6 +20,12 @@ const Header = () => {
         <nav className="md:flex-between hidden w-full max-w-xs">
           <NavItems />
         </nav>
+
+        <div className="flex w-32 justify-end gap-3">
+          <Button asChild className="rounded-full" size="lg">
+            <Link href="/sign-in">Login</Link>
+          </Button>
+        </div>
       </div>
     </header>
   );
