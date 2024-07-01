@@ -1,3 +1,4 @@
+import Search from "@/components/shared/Search";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
@@ -39,8 +40,8 @@ export default async function Home() {
         </h2>
 
         <div className="flex w-full flex-col gap-5 md:flex-row">
-          {/* <Search />
-          <CategoryFilter /> */}
+          <Search />
+          {/* <CategoryFilter /> */}
           Search CategoryFilter
         </div>
       </section>
