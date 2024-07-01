@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import NavItems from "./NavItems";
 
 const Header = () => {
   return (
@@ -15,7 +16,9 @@ const Header = () => {
           />
         </Link>
 
-        <nav className="md:flex-between hidden w-full max-w-xs">NavItems</nav>
+        <nav className="md:flex-between hidden w-full max-w-xs">
+          <NavItems />
+        </nav>
       </div>
     </header>
   );
