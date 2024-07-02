@@ -4,6 +4,7 @@ import React from "react";
 import NavItems from "./NavItems";
 import { Button } from "@/components/ui/button";
 import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
+import MobileNav from "./MobileNav";
 
 const Header = () => {
   return (
@@ -27,7 +28,7 @@ const Header = () => {
         <div className="flex w-32 justify-end gap-3">
           <SignedIn>
             <UserButton afterSignOutUrl="/" />
-            {/* <MobileNav /> */}
+            <MobileNav />
           </SignedIn>
           <SignedOut>
             <Button asChild className="rounded-full" size="lg">
