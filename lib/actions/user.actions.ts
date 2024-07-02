@@ -1,8 +1,9 @@
 "use server";
 
 import { CreateUserParams } from "@/types";
-import { connectToDatabase } from "../database";
-import User from "../database/models/user.model";
+import { connectToDatabase } from "@/lib/database";
+import User from "@/lib/database/models/user.model";
+import { handleError } from "@/lib/utils";
 
 export async function createUser(user: CreateUserParams) {
   try {
@@ -11,5 +12,7 @@ export async function createUser(user: CreateUserParams) {
     const newUser = await User.create(user);
 
     return JSON.parse(JSON.stringify(newUser));
-  } catch (error) {}
+  } catch (error) {
+    handleError(error);
+  }
 }
