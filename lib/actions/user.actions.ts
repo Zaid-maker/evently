@@ -50,6 +50,8 @@ export async function deleteUser(clerkId: string) {
         { _id: { $in: userToDelete.events } },
         { $pull: { organizer: userToDelete._id } },
       ),
+
+      // TODO: Update Order
     ]);
 
     const deleteUser = await User.findByIdAndDelete(userToDelete._id);
