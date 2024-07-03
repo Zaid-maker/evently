@@ -100,17 +100,13 @@ const EventForm = ({ userId, type, event, eventId }: EventFormProps) => {
             render={({ field }) => (
               <FormItem className="w-full">
                 <FormControl className="h-72">
-                  <Input
-                    placeholder="Event TItle"
-                    {...field}
-                    className="input-field"
-                  />
+                  <textarea placeholder="description" />
                 </FormControl>
                 <FormMessage />
               </FormItem>
             )}
           />
-          <FormField
+          {/* <FormField
             control={form.control}
             name="imageUrl"
             render={({ field }) => (
@@ -119,7 +115,7 @@ const EventForm = ({ userId, type, event, eventId }: EventFormProps) => {
                 <FormMessage />
               </FormItem>
             )}
-          />
+          /> */}
         </div>
 
         <Button
