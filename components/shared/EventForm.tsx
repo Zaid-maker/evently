@@ -29,6 +29,7 @@ import { Checkbox } from "../ui/checkbox";
 import { useRouter } from "next/navigation";
 import { createEvent, updateEvent } from "@/lib/actions/event.actions";
 import { IEvent } from "@/lib/database/models/event.model";
+import Dropdown from "./Dropdown";
 
 type EventFormProps = {
   userId: string;
@@ -86,7 +87,12 @@ const EventForm = ({ userId, type, event, eventId }: EventFormProps) => {
             name="categoryId"
             render={({ field }) => (
               <FormItem>
-                <FormControl></FormControl>
+                <FormControl>
+                  <Dropdown
+                    onChangeHandler={field.onChange}
+                    value={field.value}
+                  />
+                </FormControl>
                 <FormMessage />
               </FormItem>
             )}
