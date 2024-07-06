@@ -30,7 +30,7 @@ import { useRouter } from "next/navigation";
 import { createEvent, updateEvent } from "@/lib/actions/event.actions";
 import { IEvent } from "@/lib/database/models/event.model";
 import Dropdown from "./Dropdown";
-import FileUploader from "./FileUploader";
+import { FileUploader } from "./FileUploader";
 
 type EventFormProps = {
   userId: string;

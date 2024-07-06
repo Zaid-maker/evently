@@ -15,11 +15,11 @@ type FileUploaderProps = {
   setFiles: Dispatch<SetStateAction<File[]>>;
 };
 
-const FileUploader = ({
-  onFieldChange,
+export function FileUploader({
   imageUrl,
+  onFieldChange,
   setFiles,
-}: FileUploaderProps) => {
+}: FileUploaderProps) {
   const onDrop = useCallback((acceptedFiles: FileWithPath[]) => {
     setFiles(acceptedFiles);
     onFieldChange(convertFileToUrl(acceptedFiles[0]));
@@ -32,8 +32,8 @@ const FileUploader = ({
 
   return (
     <div
-      {...getRootProps}
-      className="flex-center bg-dark-3 flex h-72 cursor-pointer overflow-hidden rounded-xl bg-gray-50"
+      {...getRootProps()}
+      className="flex-center bg-dark-3 flex h-72 cursor-pointer flex-col overflow-hidden rounded-xl bg-grey-50"
     >
       <input {...getInputProps()} className="cursor-pointer" />
 
@@ -64,6 +64,4 @@ const FileUploader = ({
       )}
     </div>
   );
-};
-
-export default FileUploader;
+}
