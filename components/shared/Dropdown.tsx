@@ -48,7 +48,7 @@ const Dropdown = ({ value, onChangeHandler }: DropdownProps) => {
       categoryList && setCategories(categoryList as ICategory[]);
     };
 
-    getCategories;
+    getCategories();
   }, []);
 
   return (
