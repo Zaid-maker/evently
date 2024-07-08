@@ -21,10 +21,10 @@ import { Textarea } from "@/components/ui/textarea";
 // import { FileUploader } from "./FileUploader"
 import { useState } from "react";
 import Image from "next/image";
-// import DatePicker from "react-datepicker";
+import DatePicker from "react-datepicker";
 // import { useUploadThing } from '@/lib/uploadthing'
 
-// import "react-datepicker/dist/react-datepicker.css";
+import "react-datepicker/dist/react-datepicker.css";
 import { Checkbox } from "../ui/checkbox";
 import { useRouter } from "next/navigation";
 import { createEvent, updateEvent } from "@/lib/actions/event.actions";
@@ -171,7 +171,7 @@ const EventForm = ({ userId, type, event, eventId }: EventFormProps) => {
             render={({ field }) => (
               <FormItem className="w-full">
                 <FormControl>
-                  <div className="flex-center h-[54]px w-full overflow-hidden rounded-full bg-grey-50 px-4 py-2">
+                  <div className="flex-center h-[54px] w-full overflow-hidden rounded-full bg-grey-50 px-4 py-2">
                     <Image
                       src="/assets/icons/calendar.svg"
                       alt="calendar"
@@ -182,16 +182,17 @@ const EventForm = ({ userId, type, event, eventId }: EventFormProps) => {
                     <p className="ml-3 whitespace-nowrap text-grey-600">
                       Start Date:
                     </p>
-                    {/* <DatePicker 
-                        selected={field.value} 
-                        onChange={(date: Date) => field.onChange(date)} 
-                        showTimeSelect
-                        timeInputLabel="Time:"
-                        dateFormat="MM/dd/yyyy h:mm aa"
-                        wrapperClassName="datePicker"
-                      /> */}
+                    <DatePicker
+                      selected={field.value}
+                      onChange={(date: Date) => field.onChange(date)}
+                      showTimeSelect
+                      timeInputLabel="Time:"
+                      dateFormat="MM/dd/yyyy h:mm aa"
+                      wrapperClassName="datePicker"
+                    />
                   </div>
                 </FormControl>
+                <FormMessage />
               </FormItem>
             )}
           />
@@ -201,7 +202,7 @@ const EventForm = ({ userId, type, event, eventId }: EventFormProps) => {
             render={({ field }) => (
               <FormItem className="w-full">
                 <FormControl>
-                  <div className="flex-center h-[54]px w-full overflow-hidden rounded-full bg-grey-50 px-4 py-2">
+                  <div className="flex-center h-[54px] w-full overflow-hidden rounded-full bg-grey-50 px-4 py-2">
                     <Image
                       src="/assets/icons/calendar.svg"
                       alt="calendar"
@@ -212,16 +213,17 @@ const EventForm = ({ userId, type, event, eventId }: EventFormProps) => {
                     <p className="ml-3 whitespace-nowrap text-grey-600">
                       End Date:
                     </p>
-                    {/* <DatePicker 
-                        selected={field.value} 
-                        onChange={(date: Date) => field.onChange(date)} 
-                        showTimeSelect
-                        timeInputLabel="Time:"
-                        dateFormat="MM/dd/yyyy h:mm aa"
-                        wrapperClassName="datePicker"
-                      /> */}
+                    <DatePicker
+                      selected={field.value}
+                      onChange={(date: Date) => field.onChange(date)}
+                      showTimeSelect
+                      timeInputLabel="Time:"
+                      dateFormat="MM/dd/yyyy h:mm aa"
+                      wrapperClassName="datePicker"
+                    />
                   </div>
                 </FormControl>
+                <FormMessage />
               </FormItem>
             )}
           />
