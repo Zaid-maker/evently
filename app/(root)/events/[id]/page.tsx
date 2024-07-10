@@ -86,6 +86,12 @@ const EventDetails = async ({
           </div>
         </div>
       </section>
+
+      <section className="wrapper my-8 flex flex-col gap-8 md:gap-12">
+        <h2 className="h2-bold">Related Events</h2>
+
+        <p>Collection...</p>
+      </section>
     </>
   );
 };
