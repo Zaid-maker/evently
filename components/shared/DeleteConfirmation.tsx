@@ -19,6 +19,9 @@ import {
 import { deleteEvent } from "@/lib/actions/event.actions";
 
 const DeleteConfirmation = ({ eventId }: { eventId: string }) => {
+  const pathname = usePathname();
+  let [isPending, startTransition] = useTransition();
+
   return (
     <AlertDialog>
       <AlertDialogTrigger>
@@ -40,6 +43,15 @@ const DeleteConfirmation = ({ eventId }: { eventId: string }) => {
 
         <AlertDialogFooter>
           <AlertDialogCancel>Cancel</AlertDialogCancel>
+          <AlertDialogAction
+            onClick={() =>
+              startTransition(async () => {
+                await deleteEvent({ eventId, path: pathname });
+              })
+            }
+          >
+            {isPending ? "Deleting..." : "Delete"}
+          </AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>
     </AlertDialog>
