@@ -33,6 +33,17 @@ const Orders = async ({ searchParams }: SearchParamProps) => {
               <th className="min-w-[100px] py-3 text-right">Amount</th>
             </tr>
           </thead>
+          <tbody>
+            {orders && orders.length === 0 ? (
+              <tr className="border-b">
+                <td colSpan={5} className="py-4 text-center text-gray-500">
+                  No orders found.
+                </td>
+              </tr>
+            ) : (
+              <></>
+            )}
+          </tbody>
         </table>
       </section>
     </>
