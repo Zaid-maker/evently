@@ -1,11 +1,16 @@
 "use client";
 
-import { SignedIn, SignedOut } from "@clerk/nextjs";
+import { SignedIn, SignedOut, useUser } from "@clerk/nextjs";
 import React from "react";
 import { Button } from "../ui/button";
 import Link from "next/link";
+import Checkout from "./Checkout";
+import { IEvent } from "@/lib/database/models/event.model";
 
-const CheckoutButton = () => {
+const CheckoutButton = ({ event }: { event: IEvent }) => {
+  const { user } = useUser();
+  const userId = user?.publicMetadata.userId as string;
+
   return (
     <div className="flex items-center gap-3">
       <SignedOut>
@@ -15,8 +20,7 @@ const CheckoutButton = () => {
       </SignedOut>
 
       <SignedIn>
-        {/* <Checkout event={event} userId={userId} /> */}
-        Checkout
+        <Checkout event={event} userId={userId} />
       </SignedIn>
     </div>
   );
