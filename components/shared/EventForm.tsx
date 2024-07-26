@@ -1,34 +1,32 @@
 "use client";
 
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
 import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
-  FormLabel,
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { eventFormSchema } from "@/lib/validator";
-import * as z from "zod";
-import { eventDefaultValues } from "@/constants";
-import Dropdown from "./Dropdown";
 import { Textarea } from "@/components/ui/textarea";
-import { FileUploader } from "./FileUploader";
-import { useState } from "react";
-import Image from "next/image";
-import DatePicker from "react-datepicker";
+import { eventDefaultValues } from "@/constants";
 import { useUploadThing } from "@/lib/uploadthing";
+import { eventFormSchema } from "@/lib/validator";
+import { zodResolver } from "@hookform/resolvers/zod";
+import Image from "next/image";
+import { useState } from "react";
+import DatePicker from "react-datepicker";
+import { useForm } from "react-hook-form";
+import * as z from "zod";
+import Dropdown from "./Dropdown";
+import { FileUploader } from "./FileUploader";
 
-import "react-datepicker/dist/react-datepicker.css";
-import { Checkbox } from "../ui/checkbox";
-import { useRouter } from "next/navigation";
 import { createEvent, updateEvent } from "@/lib/actions/event.actions";
 import { IEvent } from "@/lib/database/models/event.model";
+import { useRouter } from "next/navigation";
+import "react-datepicker/dist/react-datepicker.css";
+import { Checkbox } from "../ui/checkbox";
 
 type EventFormProps = {
   userId: string;
